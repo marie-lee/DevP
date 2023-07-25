@@ -18,7 +18,7 @@
 <div class="container">
     <div class="main-text">${title}</div>
     <div class="calender">Item1</div>
-    <div class="project_list">
+    <div class="project_list" onclick="location.href='projectList.do'">
         <div>진행 중인 프로젝트</div>
     </div>
     <div class="issue">Item3</div>
