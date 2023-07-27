@@ -14,20 +14,21 @@ public class CommonController {
 
         HttpSession session = request.getSession();
 
-        session.setAttribute("userId", "sejin");
-        String userId = (String)session.getAttribute("userId");
-        session.setAttribute("title", logincheck(userId));
+        String userName = (String)session.getAttribute("name");
+        session.setAttribute("title", logincheck(userName, request));
 
         return "main";
     }
 
-
-    public String logincheck(String id) {
-        if(id != null){
-            String loginSuccess = id +"님, 반갑습니다.";
+    public String logincheck(String name, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        if(name != null){
+            String loginSuccess = name +"님, 반갑습니다.";
+            session.setAttribute("login", "로그아웃");
             return loginSuccess;
         }
         else{
+            session.setAttribute("login", "로그인");
             return "로그인 후 이용하세요.";
         }
     }

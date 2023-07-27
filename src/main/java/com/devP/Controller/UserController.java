@@ -18,8 +18,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-
     @RequestMapping(value="/login.do", method= RequestMethod.GET)
     public String loginView(){
         return "login";
@@ -33,7 +31,7 @@ public class UserController {
             session.setAttribute("name",user.getName());
             session.setAttribute("id",user.getId());
             System.out.println((String)request.getParameter("saveId"));
-            return "main";
+            return "redirect:/";
         } else
         return "login";
     }
