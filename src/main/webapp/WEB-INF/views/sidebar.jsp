@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="sidebar">
-    <p class="sidebar-title">로고</p>
+    <p class="sidebar-title" onclick="location.href='/'">로고</p>
     <div class="navigation">
         <ul>
             <li><a href="index.html">프로젝트</a></li>
