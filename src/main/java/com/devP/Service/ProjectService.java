@@ -8,5 +8,6 @@ import java.util.List;
 public interface ProjectService {
 	
 	List<ProjectGroupVO> getProjectList(ProjectGroupVO vo);
+	public List<ProjectVO> getProjectName(ProjectVO vo);
 
 }

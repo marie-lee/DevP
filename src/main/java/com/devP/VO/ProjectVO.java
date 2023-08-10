@@ -4,33 +4,8 @@ import java.util.Date;
 
 //VO(Value Object)
 public class ProjectVO {
-    private String projectName;
-    private String startDate;
-    private String endDate;
-    private int progress;
+
     private int projectId;
-    private String wbsFile;
-    private String planFile;
-
-    public String getPlanFile() {
-        return planFile;
-    }
-
-    public void setPlanFile(String planFile) {
-        this.planFile = planFile;
-    }
-
-
-
-    public String getWbsFile() {
-        return wbsFile;
-    }
-
-    public void setWbsFile(String wbsFile) {
-        this.wbsFile = wbsFile;
-    }
-
-
 
     public int getProjectId() {
         return projectId;
@@ -73,6 +48,9 @@ public class ProjectVO {
     }
 
 
-
+    private String projectName;
+    private String startDate;
+    private String endDate;
+    private int progress;
 
 }

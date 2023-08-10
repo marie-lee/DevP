@@ -19,4 +19,5 @@ public class ProjectDAOMybatis {
     }
 
 
+    public List<ProjectVO> getProjectName(ProjectVO vo){return mybatis.selectList("ProjectDAO.getProjectName", vo); }
 }

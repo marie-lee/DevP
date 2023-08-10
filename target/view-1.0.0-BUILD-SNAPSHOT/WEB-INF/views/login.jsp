@@ -12,7 +12,7 @@
     <div class="login-wrapper">
             <form method="post" action="login.do" id="login-form">
                 <label id="inputLabel">아이디<br>
-                <input type="text" name="id" placeholder="id" value="${id}"><br>
+                <input type="text" name="userId" placeholder="id" value="${id}"><br>
                 <label id="inputLabel">비밀번호<br>
                 <input type="password" name="password" placeholder="Password"><br>
                 <label for="remember-check">

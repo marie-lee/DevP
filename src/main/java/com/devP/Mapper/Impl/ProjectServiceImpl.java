@@ -17,4 +17,5 @@ public class ProjectServiceImpl implements ProjectService {
 
     public List<ProjectGroupVO> getProjectList(ProjectGroupVO vo) { return projectDAO.getProjectList(vo); }
 
+    public List<ProjectVO> getProjectName(ProjectVO vo) {return projectDAO.getProjectName(vo);}
 }
