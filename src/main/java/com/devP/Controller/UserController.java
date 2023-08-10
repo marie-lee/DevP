@@ -18,6 +18,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private MailController mailController;
+
+
+
     @RequestMapping(value="/login.do", method= RequestMethod.GET)
     public String loginView(){
         return "login";
@@ -28,17 +33,48 @@ public class UserController {
 
         UserVO user = userService.getUser(vo);
         if(user != null){
-            session.setAttribute("name",user.getName());
+            String saveId = request.getParameter("saveId");
+            System.out.println(saveId);
+//            session.setAttribute("name",user.getName());
             session.setAttribute("id",user.getId());
-            System.out.println((String)request.getParameter("saveId"));
+//            session.setAttribute("user", user);
+
+            if("on".equals(saveId)){
+                session.setAttribute("checked","checked");
+            } else {
+                session.removeAttribute("checked");
+            }
+
             return "redirect:/";
-        } else
-        return "login";
+        } else {
+            return "login";
+        }
     }
 
     @RequestMapping(value="/logout.do", method = RequestMethod.GET)
     public String logout(HttpSession session){
-        session.invalidate();
+        if(session.getAttribute("checked") != null){
+            System.out.println("아이디 저장임");
+        } else {
+            session.invalidate();
+            System.out.println("아이디 저장 안됨");
+        }
         return "redirect:login.do";
+    }
+    @RequestMapping(value="/searchLogin.do", method = RequestMethod.GET)
+    public String searchLoginView(){ return "searchLogin"; }
+
+
+    @RequestMapping(value = "/searchId.do", method = RequestMethod.POST)
+    public String searchId(UserVO vo, HttpServletRequest request) throws Exception {
+        String email = request.getParameter("email-id")+"@"+request.getParameter("email");
+        vo.setEmail(email);
+        System.out.println(email);
+        UserVO user = userService.getUserIdByEmail(vo);
+        if(user != null){
+            System.out.println(user.getId());
+            mailController.sendId(user.getId(),user.getEmail());
+        }
+        return "searchLogin";
     }
 }

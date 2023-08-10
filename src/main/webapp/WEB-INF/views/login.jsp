@@ -16,11 +16,11 @@
                 <label id="inputLabel">비밀번호<br>
                 <input type="password" name="password" placeholder="Password"><br>
                 <label for="remember-check">
-                    <input type="checkbox" name="saveId" id="remember-check" ${chekced}} >아이디 저장
+                    <input type="checkbox" name="saveId" id="remember-check" ${checked} >아이디 저장
                 </label><br>
                 <input type="submit" value="Login">
             </form>
-            <a href="#">아이디/비밀번호 찾기</a>
+            <a href="searchLogin.do">아이디/비밀번호 찾기</a>
             <a href="#">회원가입</a>
         </div>
 </div>

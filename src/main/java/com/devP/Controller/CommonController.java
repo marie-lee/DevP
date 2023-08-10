@@ -14,16 +14,18 @@ public class CommonController {
 
         HttpSession session = request.getSession();
 
-        String userName = (String)session.getAttribute("name");
-        session.setAttribute("title", logincheck(userName, request));
+        String userId = (String)session.getAttribute("id");
+        session.setAttribute("title", logincheck(userId, request));
 
         return "main";
     }
 
-    public String logincheck(String name, HttpServletRequest request) {
+    public String logincheck(String id, HttpServletRequest request) {
+
         HttpSession session = request.getSession();
-        if(name != null){
-            String loginSuccess = name +"님, 반갑습니다.";
+
+        if(id != null){
+            String loginSuccess = id +"님, 반갑습니다.";
             session.setAttribute("login", "로그아웃");
             return loginSuccess;
         }

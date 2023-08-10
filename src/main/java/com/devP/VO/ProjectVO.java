@@ -4,6 +4,33 @@ import java.util.Date;
 
 //VO(Value Object)
 public class ProjectVO {
+    private String projectName;
+    private String startDate;
+    private String endDate;
+    private int progress;
+    private int projectId;
+    private String wbsFile;
+    private String planFile;
+
+    public String getPlanFile() {
+        return planFile;
+    }
+
+    public void setPlanFile(String planFile) {
+        this.planFile = planFile;
+    }
+
+
+
+    public String getWbsFile() {
+        return wbsFile;
+    }
+
+    public void setWbsFile(String wbsFile) {
+        this.wbsFile = wbsFile;
+    }
+
+
 
     public int getProjectId() {
         return projectId;
@@ -13,37 +40,29 @@ public class ProjectVO {
         this.projectId = projectId;
     }
 
-    private int projectId;
-
-    public int getProjectName() {
+    public String getProjectName() {
         return projectName;
     }
 
-    public void setProjectName(int projectName) {
+    public void setProjectName(String projectName) {
         this.projectName = projectName;
     }
 
-    private int projectName;
-
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date startDate;
-
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
-
-    private Date endDate;
 
     public int getProgress() {
         return progress;
@@ -53,25 +72,7 @@ public class ProjectVO {
         this.progress = progress;
     }
 
-    public int progress;
 
-    public int getWbsFileId() {
-        return wbsFileId;
-    }
 
-    public void setWbsFileId(int wbsFileId) {
-        this.wbsFileId = wbsFileId;
-    }
 
-    public int wbsFileId;
-
-    public int getPlanFileId() {
-        return planFileId;
-    }
-
-    public void setPlanFileId(int planFileId) {
-        this.planFileId = planFileId;
-    }
-
-    public int planFileId;
 }

@@ -1,6 +1,11 @@
 package com.devP.VO;
 
 public class ProjectGroupVO {
+    public int projectId;
+    public String userId;
+    public String leader;
+    public String position;
+    public String role;
 
     public int getProjectId() {
         return projectId;
@@ -10,7 +15,6 @@ public class ProjectGroupVO {
         this.projectId = projectId;
     }
 
-    public int projectId;
 
     public String getUserId() {
         return userId;
@@ -44,10 +48,7 @@ public class ProjectGroupVO {
         this.role = role;
     }
 
-    public String userId;
-    public String leader;
-    public String position;
-    public String role;
+
 
 
 }

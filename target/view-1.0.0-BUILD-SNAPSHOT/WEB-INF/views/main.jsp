@@ -9,7 +9,7 @@
 <%@include file="sidebar.jsp"%>
 <html>
 <head>
-    <title>Title</title>
+    <title>개발자국</title>
 <%--    <link rel="stylesheet" href="/resources/css/styles.css">--%>
     <link rel="stylesheet" href="/resources/css/main.css">
     <script src="script.js"></script>
@@ -22,9 +22,11 @@
     </div>
     <div class="login-button"></div>
     <div class="calender">Item1</div>
-    <div class="project_list" onclick="location.href='projectList.do'">
-        <div>진행 중인 프로젝트</div>
-    </div>
+    <a href="projectList.do">
+        <div class="project_list">
+            <div>진행 중인 프로젝트</div>
+        </div>
+    </a>
     <div class="issue">Item3</div>
     <div class="task">Item4</div>
 </div>
