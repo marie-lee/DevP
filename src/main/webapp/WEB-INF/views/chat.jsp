@@ -77,9 +77,9 @@
     var socket = null;
     var isStomp = false;
     const urlParams = new URL(location.href).searchParams;
-    const chatRoomId = "${ chatRoomId }"
+    const chatRoomId = "${ chatRoomId }";
     const receiveId = urlParams.get('userId');
-    const senderId = "${ user.id }"
+    const senderId = "${ user.id }";
     $(document).ready(function() {
         connectStomp()
         $('#chatbutton').on('click', function(evt) {
@@ -95,7 +95,8 @@
                     chatId : chatRoomId,
                     sender : senderId,
                     receiver : receiveId,
-                    content : msg
+                    content : msg,
+                    projectId : "${ project.projectId }"
                 }));
             $('textarea#msg').val('');
         });

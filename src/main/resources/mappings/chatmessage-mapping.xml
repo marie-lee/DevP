@@ -5,15 +5,14 @@
 <mapper namespace="ChatMessageDAO">
 	<!-- 채팅기록 저장 -->
 	<insert id="saveChatMessage">
-		insert into chatmessage (chatId, sender, receiver ,content)
-		values (#{chatId}, #{sender}, #{receiver} , #{content});
+		insert into chatmessage (chatId, sender, receiver ,content, projectId)
+		values (#{chatId}, #{sender}, #{receiver} , #{content}, #{projectId});
 	</insert>
 	
 	<!--  채팅 기록 -->
 	<select id="getChatHistory" resultType="ChatMessage">
 		SELECT *
-		FROM chatmessage message
-		JOIN chat room ON message.chatId = room.chatId
-		WHERE room.projectId = #{projectId} and message.chatId = #{chatId};
+		FROM chatmessage
+		WHERE projectId = #{projectId} and chatId = #{chatId};
 	</select>
 </mapper>
