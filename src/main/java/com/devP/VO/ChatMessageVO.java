@@ -12,6 +12,7 @@ public class ChatMessageVO {
 	private String content;
 	private int read;
 	private String time;
+	private int projectId;
 	public int getMessageId() {
 		return messageId;
 	}
@@ -53,5 +54,11 @@ public class ChatMessageVO {
 	}
 	public void setTime(String time) {
 		this.time = time;
+	}
+	public int getProjectId() {
+		return projectId;
+	}
+	public void setProjectId(int projectId) {
+		this.projectId = projectId;
 	}
 }
